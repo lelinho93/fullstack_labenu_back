@@ -26,6 +26,7 @@ app.use((req, res, next) => {
     next()
 })
 
+
 app.use(express.json())
 
 const server = app.listen(process.env.PORT || 3306, () => {
