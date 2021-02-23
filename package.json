@@ -4,6 +4,8 @@
   "description": "repositório backend proveto fullstack labenu",
   "main": "index.js",
   "scripts": {
+    "start":"tsc && node ./buld/index.js",
+    "start:dev":"ts-node-dev ./src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
