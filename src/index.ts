@@ -2,6 +2,7 @@ import express from 'express'
 import knex from 'knex'
 import dotenv from 'dotenv'
 import { AddressInfo } from 'net'
+import signup from './endpoints/signup'
 
 dotenv.config()
 
@@ -28,6 +29,9 @@ app.use((req, res, next) => {
 
 
 app.use(express.json())
+
+app.post("/user/signup", signup)
+app.post("/user/login")
 
 const server = app.listen(process.env.PORT || 3306, () => {
     if(server) {
