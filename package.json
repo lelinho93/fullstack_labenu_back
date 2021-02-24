@@ -4,8 +4,8 @@
   "description": "repositório backend proveto fullstack labenu",
   "main": "index.js",
   "scripts": {
-    "start":"tsc && node ./build/index.js",
-    "start:dev":"ts-node-dev ./src/index.ts",
+    "start": "tsc && node ./build/index.js",
+    "start:dev": "ts-node-dev ./src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +23,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.18",
     "mysql": "^2.18.1",
     "ts-node": "^9.1.1",
@@ -31,6 +32,7 @@
   "devDependencies": {
     "@types/cors": "^2.8.10",
     "@types/express": "^4.17.11",
+    "@types/jsonwebtoken": "^8.5.0",
     "@types/knex": "^0.16.1",
     "@types/node": "^14.14.31",
     "@types/uuid": "^8.3.0",

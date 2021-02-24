@@ -1,5 +1,6 @@
 import { Request, Response } from 'express'
 import signupData from '../data/signupData'
+import { generateToken } from '../service/authenticator';
 import { generate } from '../service/idGenerator'
 
 
@@ -27,7 +28,9 @@ export default async function signup(
             req.body.role
         )
 
-        res.status(200).send("usuário cadastrado!")
+        const token = generateToken({id})
+
+        res.status(200).send({token})
 
     } catch (error) {
         res.status(400).send({
