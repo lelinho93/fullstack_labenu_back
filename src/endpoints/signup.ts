@@ -14,7 +14,7 @@ export default async function signup(
            !req.body.email ||
            !req.body.password
         ) {
-            throw new Error("Preencha os campos 'name', 'nickname', 'email' e 'password'")
+            throw new Error("Preencha os campos 'name', 'nickname', 'email' e 'password'!")
         }
 
         const id: string = generate();
