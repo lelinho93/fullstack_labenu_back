@@ -2,6 +2,7 @@ import { Request, Response } from 'express'
 import signupData from '../data/signupData'
 import { generateToken } from '../service/authenticator';
 import { generate } from '../service/idGenerator'
+import { hash } from "../service/hashManager"
 
 
 export default async function signup(
@@ -19,12 +20,14 @@ export default async function signup(
 
         const id: string = generate();
 
+        const cypherPassword: string =  hash(req.body.password)
+
         await signupData(
             id,
             req.body.name,
             req.body.email,
             req.body.nickname,
-            req.body.password,            
+            cypherPassword,            
             req.body.role
         )
 
