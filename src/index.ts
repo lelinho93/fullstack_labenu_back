@@ -5,6 +5,7 @@ import { AddressInfo } from 'net'
 //import signup from './endpoints/signup'
 //import { login } from './endpoints/login'
 import { UserController } from './controller/UserController'
+import { ImageController } from './controller/ImageController'
 
 
 dotenv.config()
@@ -35,6 +36,12 @@ app.use(express.json())
 
 app.post("/user/signup", new UserController().create)
 app.post("/user/login", new UserController().login)
+
+app.post("/image", new ImageController().create)
+
+
+
+
 
 const server = app.listen(process.env.PORT || 3306, () => {
     if(server) {

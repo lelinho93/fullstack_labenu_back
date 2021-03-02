@@ -1,4 +1,3 @@
-import { Request, Response } from "express";
 import { UserDataBase } from "../data/UserDataBase";
 import { user } from "../model/User";
 import { TokenManager } from "../service/authenticator";
