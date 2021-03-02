@@ -2,8 +2,9 @@ import express from 'express'
 import knex from 'knex'
 import dotenv from 'dotenv'
 import { AddressInfo } from 'net'
-import signup from './endpoints/signup'
-import { login } from './endpoints/login'
+//import signup from './endpoints/signup'
+//import { login } from './endpoints/login'
+import { UserController } from './controller/UserController'
 
 
 dotenv.config()
@@ -24,16 +25,16 @@ const cors = require("cors")
 const app = express()
 
 app.use((req, res, next) => {
-    res.header("Acess-Control-Allow-Origin", "*")
+    res.header("Access-Control-Allow-Origin", "*")
     app.use(cors())
     next()
 })
 
-
 app.use(express.json())
 
-app.post("/user/signup", signup)
-app.post("/user/login", login)
+
+app.post("/user/signup", new UserController().create)
+app.post("/user/login", new UserController().login)
 
 const server = app.listen(process.env.PORT || 3306, () => {
     if(server) {
