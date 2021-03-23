@@ -6,6 +6,7 @@ import { AddressInfo } from 'net'
 //import { login } from './endpoints/login'
 import { UserController } from './controller/UserController'
 import { ImageController } from './controller/ImageController'
+import { GetImagesController } from './controller/GetImagesController'
 
 
 dotenv.config()
@@ -38,6 +39,7 @@ app.post("/user/signup", new UserController().create)
 app.post("/user/login", new UserController().login)
 
 app.post("/image", new ImageController().create)
+app.get("/getimages", new GetImagesController().create)
 
 
 

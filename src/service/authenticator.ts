@@ -1,4 +1,5 @@
 import * as jwt from 'jsonwebtoken'
+import { AuthenticationData } from '../model/User'
 
 
 export class TokenManager {
@@ -12,8 +13,8 @@ export class TokenManager {
             
         
     }
-    get(token: string): object {
+    get(token: string): AuthenticationData {
         const payload = jwt.verify(token, process.env.JWT_KEY as string)
-        return payload as object
+        return payload as AuthenticationData
     }
 }

@@ -7,14 +7,14 @@ export class ImageController {
         const imageBusiness = new ImageBusiness
 
         try {
+            const token = req.headers.authorization as string
             const subtitle: string = req.body.subtitle
-            const author: string = req.body.author
             const file: string = req.body.file
             const tags: string = req.body.tags
             const collection: string = req.body.collection
 
            
-            await imageBusiness.create(subtitle, author, file, tags, collection)
+            await imageBusiness.create(subtitle, file, tags, collection, token)
 
             res.status(200).send("Imagem inserida!")
 

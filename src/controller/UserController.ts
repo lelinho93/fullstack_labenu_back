@@ -13,7 +13,7 @@ export class UserController {
             const password: string = req.body.password
 
             const token: string = await userBusiness.create(name, nickname, email, password)
-            res.status(200).send({token})
+            res.status(201).send({token})
             
         } catch (error) {
             res.status(400).send({message: error.message})
