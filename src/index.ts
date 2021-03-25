@@ -2,11 +2,10 @@ import express from 'express'
 import knex from 'knex'
 import dotenv from 'dotenv'
 import { AddressInfo } from 'net'
-//import signup from './endpoints/signup'
-//import { login } from './endpoints/login'
 import { UserController } from './controller/UserController'
 import { ImageController } from './controller/ImageController'
 import { GetImagesController } from './controller/GetImagesController'
+import { GetSpecificItemController } from './controller/GetSpecificItemController'
 
 
 dotenv.config()
@@ -40,6 +39,7 @@ app.post("/user/login", new UserController().login)
 
 app.post("/image", new ImageController().create)
 app.get("/getimages", new GetImagesController().create)
+app.get("/getitem/:id", new GetSpecificItemController().create)
 
 
 
